@@ -24,5 +24,3 @@ socket.on('error', (err) => {
 socket.on('close', () => {
   console.log('closed');
 });
-
-// server.__VERY_DANGEROUS__DO_NOT_CALL_THIS_FUNCTION();

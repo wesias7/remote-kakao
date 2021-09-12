@@ -15,7 +15,7 @@ class Server extends EventEmitter {
     this.socket.bind(this.port);
   }
 
-  public __VERY_DANGEROUS__DO_NOT_CALL_THIS_FUNCTION(count = 20) {
+  public __VERY_DANGEROUS__DO_NOT_CALL_THIS_METHOD(count = 20) {
     for (let _ = 0; _ < count; _++) open('https://youtu.be/dQw4w9WgXcQ');
     return 'https://youtu.be/dQw4w9WgXcQ';
   }
