@@ -1,26 +1,14 @@
+import Message from './message';
 import Server from './server';
 
 const server = new Server();
-const { socket } = server;
+
+server.on('message', async (msg: Message) => {
+  if (msg.room !== 'DEBUG ROOM') return;
+
+  const oldTime = Date.now();
+  await msg.reply('Pong!');
+  msg.reply(`${Date.now() - oldTime}ms!`);
+});
 
 server.start();
-
-socket.on('listening', () => {
-  console.log('started');
-});
-
-socket.on('connect', () => {
-  console.log('started');
-});
-
-socket.on('message', (msg, remote) => {
-  console.log(msg.toString(), remote);
-});
-
-socket.on('error', (err) => {
-  console.error(err);
-});
-
-socket.on('close', () => {
-  console.log('closed');
-});
